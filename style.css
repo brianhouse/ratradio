@@ -1,0 +1,37 @@
+body, html {
+	font: 12px 'Open Sans', sans-serif;
+	font-weight: normal;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+	position: absolute;
+	max-width: 660px;
+		/*height: 60px;*/
+	right: 0px;
+	bottom: 300px;
+
+	border: 1px solid cyan;
+	border-right: none;
+	background-color: rgba(0, 0, 0, 0.75);
+	color: cyan;
+	padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+	#main {
+		border-left: none;
+	}
+}
+
+.title {
+	font-size: 32px;
+	text-transform: uppercase;
+	padding-bottom: 15px;
+}
+
+a {
+	color: cyan;
+}
