@@ -11,29 +11,29 @@
     <meta name="description" content="Rat Radio" />
     <meta property="og:title" content="Rat Radio" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="burrow.jpg" /> 
+    <meta property="og:image" content="/burrow.jpg" /> 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@h0use" />
     <meta name="twitter:creator" content="@h0use" />
     <meta name="twitter:title" content="Rat Radio" />
     <meta name="twitter:description" content="This is a broadcast from a rat burrow in New York City's Lower East Side." />
-    <meta name="twitter:image" content="burrow.jpg" />    
+    <meta name="twitter:image" content="/burrow.jpg" />    
 
     <link rel="icon" href="favicon.png" /> 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">    
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="vegas/jquery.vegas.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="vegas/jquery.vegas.min.css" />
+    <script type="text/javascript" src="/vegas/jquery.vegas.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/vegas/jquery.vegas.min.css" />
     <script type="text/javascript">
 
         $(function() {
 
-            $.vegas({src: "burrow.jpg"});
-            $.vegas("overlay", {src: "vegas/images/bg-dot.png"});
+            $.vegas({src: "/burrow.jpg"});
+            $.vegas("overlay", {src: "/vegas/images/bg-dot.png"});
 
-            $("#rats")[0].addEventListener('canplay', function(){
+            $("#rats")[0].addEventListener("canplay", function() {
                 $("#play").text("▶");                                                        
                 $("#play").click(function() {
                     if ($("#rats")[0].paused) {
