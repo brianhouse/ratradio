@@ -42,7 +42,7 @@
                 aud.type = "audio/mpeg";
                 document.body.appendChild(aud);    
 
-                $("#rats")[0].addEventListener("canplay", function() {
+                $("#rats")[0].addEventListener("loadedmetadata", function() {
                     $("#play").text("❚❚");   
                     $("#rats")[0].play();
                     $("#play").click(function() {
