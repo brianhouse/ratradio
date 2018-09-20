@@ -6,36 +6,49 @@
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width" />
 
-  <!-- ** -->    
     <meta name="author" content="Brian House" /> 
     <meta name="copyright" content="Brian House" /> 
     <meta name="description" content="Rat Radio" />
     <meta property="og:title" content="Rat Radio" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://brianhouse.net/about/about.jpg" /> 
+    <meta property="og:image" content="burrow.jpg" /> 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@h0use" />
     <meta name="twitter:creator" content="@h0use" />
-    <meta name="twitter:title" content="Brian House" />
-    <meta name="twitter:description" content="Brian House is an artist who investigates more-than-human temporalities." />
-    <meta name="twitter:image" content="https://brianhouse.net/about/about.jpg" />    
+    <meta name="twitter:title" content="Rat Radio" />
+    <meta name="twitter:description" content="This is a broadcast from a rat burrow in New York City's Lower East Side." />
+    <meta name="twitter:image" content="burrow.jpg" />    
 
     <link rel="icon" href="favicon.png" /> 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CVollkorn:400,700" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.vegas.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="jquery.vegas.min.css" />
+    <script type="text/javascript" src="vegas/jquery.vegas.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="vegas/jquery.vegas.min.css" />
     <script type="text/javascript">
+
         $(function() {
+
             $.vegas({src: "burrow.jpg"});
-            $.vegas("overlay", {src: "bg-dot.png"});
+            $.vegas("overlay", {src: "vegas/images/bg-dot.png"});
+
+            $("#rats")[0].addEventListener('canplay', function(){
+                $("#play").text("▶");                                                        
+                $("#play").click(function() {
+                    if ($("#rats")[0].paused) {
+                        $("#rats")[0].play();
+                        $("#play").text("❚❚");                    
+                    } else {
+                        $("#rats")[0].pause();
+                        $("#play").text("▶");                                        
+                    }
+                });
+            }, false);            
+
         });
+
     </script>
-
-
-
 
 </head>
 <body>
@@ -46,11 +59,14 @@
 <div id="main">
 
 
-<div class="title">Rat Radio</div>
+<div class="title"><a id="play"><div class="lds-dual-ring"></div></a> Rat Radio</div>
 
-This is a broadcast from a rat burrow in New York City's Lower East Side.<br />
+This is a broadcast from a rat burrow in New York City's Lower East Side.
 <br />
-Rats primarily speak above the threshold of human hearing (20khz), so this audio has been resampled and pitch-shifted down into an audible range. The broadcast is cached from the last 24-hours recorded and re-broadcast each day. Why? Who? <a href="https://brianhouse.net/works/rat_radio">http://brianhouse.net</a>
+<br />
+Rats primarily speak above the threshold of human hearing (20khz), so this audio has been resampled and pitch-shifted down into a human-audible range. The broadcast is cached from the last 24-hours recorded and re-broadcast each day. Why? Who? <a href="https://brianhouse.net/works/rat_radio">http://brianhouse.net</a>
+
+<audio id="rats" src="http://us5.internet-radio.com:8123/stream" type="audio/mp3" />
 
 </div>
 </main>

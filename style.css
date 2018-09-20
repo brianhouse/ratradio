@@ -1,37 +1,74 @@
 body, html {
-	font: 12px 'Open Sans', sans-serif;
-	font-weight: normal;
+    font: 12px 'Open Sans', sans-serif;
+    font-weight: normal;
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
 #main {
-	position: absolute;
-	max-width: 660px;
-		/*height: 60px;*/
-	right: 0px;
-	bottom: 300px;
+    position: absolute;
+    max-width: 660px;
+        /*height: 60px;*/
+    right: 0px;
+    bottom: 300px;
 
-	border: 1px solid cyan;
-	border-right: none;
-	background-color: rgba(0, 0, 0, 0.75);
-	color: cyan;
-	padding: 20px;
+    border: 1px solid cyan;
+    border-right: none;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: cyan;
+    padding: 20px;
 }
 
 @media screen and (max-width: 700px) {
-	#main {
-		border-left: none;
-	}
+    #main {
+        border-left: none;
+    }
 }
 
 .title {
-	font-size: 32px;
-	text-transform: uppercase;
-	padding-bottom: 15px;
+    font-size: 32px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
 }
 
 a {
-	color: cyan;
+    color: cyan;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#play {
+    border: 1px solid cyan;
+    padding-left: 5px;
+    padding-right: 5px; 
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 28px;
+    height: 30px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: cyan transparent cyan transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
