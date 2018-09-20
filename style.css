@@ -39,11 +39,12 @@ a {
 }
 
 #play {
-    /*border: 1px solid cyan;*/
-    padding-left: 5px;
     padding-right: 5px; 
     text-decoration: none;
     font-size: 32px;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
 }
 
 .lds-dual-ring {
