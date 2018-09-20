@@ -43,14 +43,14 @@
                 document.body.appendChild(aud);    
 
                 $("#rats")[0].addEventListener("loadedmetadata", function() {
-                    $("#play").text("❚❚");   
+                    $("#play").text("⏸️");   
                     $("#rats")[0].play();
                     $("#play").click(function() {
                         if ($("#rats")[0].paused) {
-                            $("#play").text("❚❚");                    
+                            $("#play").text("⏸️");                    
                             $("#rats")[0].play();
                         } else {
-                            $("#play").text("▶");                                        
+                            $("#play").text("▶️");                                        
                             $("#rats")[0].pause();
                         }
                     });                                                                     
@@ -70,7 +70,7 @@
 <div id="main">
 
 
-<div class="title"><a id="play">▶</a> Rat Radio</div>
+<div class="title"><a id="play">▶️</a> Rat Radio</div>
 
 This is a broadcast from a rat burrow in New York City's Lower East Side.
 <br />

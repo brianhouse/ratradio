@@ -39,7 +39,7 @@ a {
 }
 
 #play {
-    border: 1px solid cyan;
+    /*border: 1px solid cyan;*/
     padding-left: 5px;
     padding-right: 5px; 
     text-decoration: none;
