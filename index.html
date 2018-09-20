@@ -33,21 +33,29 @@
             $.vegas({src: "/burrow.jpg"});
             $.vegas("overlay", {src: "/vegas/images/bg-dot.png"});
 
-            var playPause = function() {
-                if ($("#rats")[0].paused) {
-                    $("#rats")[0].play();
-                    $("#play").text("❚❚");                    
-                } else {
-                    $("#rats")[0].pause();
-                    $("#play").text("▶");                                        
-                }
-            };
+            $("#play").click(function() {
+                $("#play").html('<div class="lds-dual-ring"></div>');
 
-            $("#play").click(playPause);
-            
-            $("#rats")[0].addEventListener("canplay", function() {
-                $("#play").text("▶");                                                        
-            }, false);            
+                var aud = document.createElement("audio"); 
+                aud.id = "rats";
+                aud.src = "http://us5.internet-radio.com:8123/live";
+                aud.type = "audio/mpeg";
+                document.body.appendChild(aud);    
+
+                $("#rats")[0].addEventListener("canplay", function() {
+                    $("#play").text("❚❚");   
+                    $("#rats")[0].play();
+                    $("#play").click(function() {
+                        if ($("#rats")[0].paused) {
+                            $("#play").text("❚❚");                    
+                            $("#rats")[0].play();
+                        } else {
+                            $("#play").text("▶");                                        
+                            $("#rats")[0].pause();
+                        }
+                    });                                                                     
+                }, false);            
+            });
 
         });
 
@@ -62,14 +70,12 @@
 <div id="main">
 
 
-<div class="title"><a id="play"><div class="lds-dual-ring"></div></a> Rat Radio</div>
+<div class="title"><a id="play">▶</a> Rat Radio</div>
 
 This is a broadcast from a rat burrow in New York City's Lower East Side.
 <br />
 <br />
 Rats primarily speak above the threshold of human hearing (20khz), so this audio has been resampled and pitch-shifted down into a human-audible range. The broadcast is cached from the last 24-hours recorded and re-broadcast each day. Why? Who? <a href="https://brianhouse.net/works/rat_radio">http://brianhouse.net</a>
-
-<audio id="rats"><source src="http://us5.internet-radio.com:8123/live" type="audio/mpeg" /></audio>
 
 </div>
 </main>
