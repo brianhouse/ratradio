@@ -33,17 +33,19 @@
             $.vegas({src: "/burrow.jpg"});
             $.vegas("overlay", {src: "/vegas/images/bg-dot.png"});
 
+            var playPause = function() {
+                if ($("#rats")[0].paused) {
+                    $("#rats")[0].play();
+                    $("#play").text("❚❚");                    
+                } else {
+                    $("#rats")[0].pause();
+                    $("#play").text("▶");                                        
+                }
+            };
+
             $("#rats")[0].addEventListener("canplay", function() {
                 $("#play").text("▶");                                                        
-                $("#play").click(function() {
-                    if ($("#rats")[0].paused) {
-                        $("#rats")[0].play();
-                        $("#play").text("❚❚");                    
-                    } else {
-                        $("#rats")[0].pause();
-                        $("#play").text("▶");                                        
-                    }
-                });
+                $("#play").click(playPause);
             }, false);            
 
         });
